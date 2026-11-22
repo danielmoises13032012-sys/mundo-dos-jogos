@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07132f">
+  <title>Mundo dos Jogos</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="logo">🎮</span><span>Mundo dos <b>Jogos</b></span></a>
+    <nav><a href="#inicio">Início</a><a href="#jogos">Jogos</a><a href="#sobre">Sobre</a></nav>
+    <div class="account" id="account-area">
+      <button onclick="showAuth('login')">Entrar</button>
+      <button class="register-btn" onclick="showAuth('register')">Registar</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <p class="eyebrow">A DIVERSÃO COMEÇA AQUI</p>
+        <h1>Bem-vindo ao <span>Mundo dos Jogos!</span></h1>
+        <p>Escolhe um jogo, diverte-te e acumula pontos.</p>
+        <a class="primary" href="#jogos">🎮 Ver jogos</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">👑<br>🎮</div>
+    </section>
+
+    <section id="jogos" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">ESCOLHE A TUA DIVERSÃO</p><h2>Os nossos jogos</h2></div>
+        <div class="score">⭐ Pontos: <strong id="score">0</strong></div>
+      </div>
+      <div class="cards">
+        <article class="game-card"><div class="game-icon blue">🔢</div><h3>Adivinha o Número</h3><p>Tenta descobrir o número secreto entre 1 e 10.</p><button onclick="openGame('guess')">Jogar agora</button></article>
+        <article class="game-card"><div class="game-icon purple">✂️</div><h3>Pedra, Papel ou Tesoura</h3><p>Joga contra o computador e tenta vencer.</p><button onclick="openGame('rps')">Jogar agora</button></article>
+        <article class="game-card"><div class="game-icon orange">⭕</div><h3>Jogo do Galo</h3><p>Faz três símbolos em linha para ganhar.</p><button onclick="openGame('tic')">Jogar agora</button></article>
+      </div>
+    </section>
+
+    <section class="play-area" id="play-area" hidden>
+      <div class="play-head"><h2 id="game-title">Jogo</h2><button class="close" onclick="closeGame()">Fechar ✕</button></div>
+      <div id="game-content"></div>
+    </section>
+    <section id="sobre" class="about"><h2>Sobre o Mundo dos Jogos</h2><p>Uma plataforma de jogos simples, feita para jogar diretamente no navegador.</p></section>
+  </main>
+  <footer>🎮 Mundo dos Jogos — A tua diversão online!</footer>
+
+  <div class="modal" id="auth-modal" hidden>
+    <div class="modal-card">
+      <button class="modal-x" onclick="hideAuth()" aria-label="Fechar">✕</button>
+      <h2 id="auth-title">Entrar</h2>
+      <p id="auth-description">Entra na tua conta para jogar.</p>
+      <form id="auth-form">
+        <label for="username">Nome de jogador</label>
+        <input id="username" name="username" autocomplete="username" minlength="3" maxlength="20" required placeholder="Ex.: Gamer123">
+        <label for="password">Palavra-passe</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="Mínimo de 8 caracteres">
+        <button class="submit-btn" id="auth-submit" type="submit">Entrar</button>
+      </form>
+      <p class="auth-switch" id="auth-switch">Ainda não tens conta? <button type="button" onclick="showAuth('register')">Registar</button></p>
+      <p class="auth-message" id="auth-message" role="status"></p>
+    </div>
+  </div>
+  <script src="/script.js"></script>
+  <script src="/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+MUNDO DOS JOGOS — registo e login com Flask
+
+IMPORTANTE: Esta versão cria contas reais locais na base SQLite jogadores.db.
+As palavras-passe são guardadas com hash, não em texto simples.
+
+INSTALAR E EXECUTAR NO TERMUX:
+1. Extrai o ZIP.
+2. No Termux, entra na pasta extraída:
+   cd ~/storage/shared/Download/mundo_dos_jogos_login
+3. Instala Flask:
+   pip install flask
+4. Inicia:
+   python app.py
+5. No Chrome abre:
+   http://127.0.0.1:8000
+
+Para parar o servidor: CTRL + C.
+
+NOTA DE SEGURANÇA:
+Esta é uma versão de aprendizagem para testar no teu próprio telemóvel.
+Antes de publicar na Internet, configura uma SECRET_KEY privada, HTTPS e medidas adicionais de segurança.
+A base de dados jogadores.db será criada automaticamente na pasta.
